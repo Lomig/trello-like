@@ -1,0 +1,5 @@
+<div class="flex flex-no-wrap overflow-x-auto">
+  <% @columns.each do |column| %>
+    <%= component :column, column: column %>
+  <% end %>
+</div>

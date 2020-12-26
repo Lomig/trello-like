@@ -4,4 +4,8 @@ class BoardPolicy < ApplicationPolicy
       user.boards
     end
   end
+
+  def show?
+    record.members.include?(user)
+  end
 end

@@ -1,2 +1,5 @@
-<h1>Boards#show</h1>
-<p>Find me in app/views/boards/show.html.erb</p>
+<section class="container m-auto">
+  <h1><%= @board.name %></h1>
+
+  <%= component :column_index, columns: @board.columns %>
+</section>
