@@ -2,5 +2,5 @@
 
 class Column < ApplicationRecord
   belongs_to :board
-  has_many :tasks, dependent: :restrict_with_error
+  has_many :tasks, -> { order(:position) }, dependent: :restrict_with_error, inverse_of: :column
 end
