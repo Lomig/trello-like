@@ -2,8 +2,14 @@
 @import "plugins/trix.css";
 
 /* Global Settings */
-body {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  height: 100vh;
+@layer base {
+  body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+  }
+
+  h1 {
+    @apply font-bold text-6xl text-center mb-16;
+  }
 }

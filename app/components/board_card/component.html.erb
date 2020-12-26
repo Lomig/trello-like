@@ -1,2 +1,15 @@
-<div>CARD</div>
-<div><%= @board.name %></div>
+<%= link_to(board_path(@board)) do %>
+	<div class="grid grid-cols-4 grid-rows-2 h-24 w-96 m-2 border">
+	  <div class="col-start-1 row-start-1 row-span-2 <%= @background_color %> rounded-xl flex items-center justify-center text-white font-bold text-4xl">
+	    <%= @board.name[0] %>
+	  </div>
+	  <div class="col-start-2 row-start-1 col-span-3 flex items-center ml-4 pr-2 text-xl font-semibold">
+	    <p class="truncate">
+	    	<%= @board.name %>
+	    </p>
+	  </div>
+	    <div class="col-start-2 row-start-2 col-span-3 ml-4 pr-2 flex items-center">
+	      <p>AVATARS ICI</p>
+	    </div>
+	</div>
+<% end %>

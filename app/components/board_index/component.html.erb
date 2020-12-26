@@ -1,4 +1,5 @@
-<div>Add BoardIndex template here</div>
-<% @boards.each do |board| %>
-	<%= component :board_card, board: board %>
-<% end %>
+<div class="flex flex-wrap justify-center">
+	<% @boards.each do |board| %>
+		<%= component :board_card, board: board %>
+	<% end %>
+</div>
