@@ -5,6 +5,7 @@
 
 /* Library CSS */
 @import "@primer/octicons/build/build";
+@import "trix/dist/trix";
 
 /* Custom CSS */
 @import-glob "../../components/**/component.css";
