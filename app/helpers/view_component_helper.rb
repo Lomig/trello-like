@@ -16,24 +16,24 @@ module ViewComponentHelper
     namespace = name.to_s
                     .split('/')
 
-    component_path =  if namespace.count == 1
-                        component_path_from_name(namespace.first)
-                      else
-                        namespace
-                      end
+    component_path = if namespace.count == 1
+                       component_path_from_name(namespace.first)
+                     else
+                       namespace
+                     end
 
-    "#{ namespace_to_string(component_path) }::Component".constantize
+    "#{namespace_to_string(component_path)}::Component".constantize
   end
 
   def namespace_to_string(component_path)
     component_path.map(&:classify)
-                  .join("::")
+                  .join('::')
   end
 
   def component_path_from_name(component_name)
     Dir.glob(File.join(Rails.root, 'app', 'components', '**', component_name))
        .first
-       .split("/")
-       .drop_while { |item| item != "components"  }[1..-1]
+       .split('/')
+       .drop_while { |item| item != 'components' }[1..]
   end
 end

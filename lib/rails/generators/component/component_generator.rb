@@ -3,17 +3,17 @@
 module Rails
   module Generators
     class ComponentGenerator < Rails::Generators::NamedBase
-      source_root File.expand_path("templates", __dir__)
+      source_root File.expand_path('templates', __dir__)
 
-      argument :attributes, type: :array, default: [], banner: "attribute"
+      argument :attributes, type: :array, default: [], banner: 'attribute'
       class_option :sidecar, type: :boolean, default: false
-      check_class_collision suffix: "Component"
+      check_class_collision suffix: 'Component'
 
       def create_component_file
-        if options["sidecar"]
-          template "component.rb", File.join("app/components", class_path, file_name, "component.rb")
+        if options['sidecar']
+          template 'component.rb', File.join('app/components', class_path, file_name, 'component.rb')
         else
-          template "component.rb", File.join("app/components", class_path, "#{file_name}_component.rb")
+          template 'component.rb', File.join('app/components', class_path, "#{file_name}_component.rb")
         end
       end
 
@@ -24,23 +24,25 @@ module Rails
       end
 
       private
+
       def sidecared
-        return "::" if options["sidecar"]
-        ""
+        return '::' if options['sidecar']
+
+        ''
       end
 
       def file_name
-        @_file_name ||= super.sub(/_component\z/i, "")
+        @_file_name ||= super.sub(/_component\z/i, '')
       end
 
       def parent_class
-        defined?(ApplicationComponent) ? "ApplicationComponent" : "ViewComponent::Base"
+        defined?(ApplicationComponent) ? 'ApplicationComponent' : 'ViewComponent::Base'
       end
 
       def initialize_signature
         return if attributes.blank?
 
-        attributes.map { |attr| "#{attr.name}:" }.join(", ")
+        attributes.map { |attr| "#{attr.name}:" }.join(', ')
       end
 
       def initialize_body

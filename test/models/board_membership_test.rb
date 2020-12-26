@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: board_memberships
@@ -18,7 +20,7 @@
 #  fk_rails_...  (board_id => boards.id)
 #  fk_rails_...  (user_id => users.id)
 #
-require "test_helper"
+require 'test_helper'
 
 class BoardMembershipTest < ActiveSupport::TestCase
   # test "the truth" do

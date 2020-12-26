@@ -6,6 +6,9 @@
   </div>
 
   <!-- Tasks -->
+  <% @column.tasks.each do |task| %>
+    <%= component :task_card, task: task %>
+  <% end %>
 
   <!-- Add a card -->
   <%= link_to 'Add a card…', '#TODO', class: 'block py-2 text-sm text-grey-dark'  %>

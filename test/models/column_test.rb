@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: columns
@@ -17,7 +19,7 @@
 #
 #  fk_rails_...  (board_id => boards.id)
 #
-require "test_helper"
+require 'test_helper'
 
 class ColumnTest < ActiveSupport::TestCase
   # test "the truth" do
