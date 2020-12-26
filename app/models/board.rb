@@ -23,4 +23,12 @@ class Board < ApplicationRecord
   has_many :board_memberships, dependent: :destroy
   has_many :members, through: :board_memberships
   has_many :columns, -> { order(:position) }, dependent: :destroy, inverse_of: :board
+
+  after_create :add_owner_to_members
+
+  private
+
+  def add_owner_to_members
+    BoardMembership.create(board: self, user: owner)
+  end
 end

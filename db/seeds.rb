@@ -55,6 +55,10 @@ boards = [
   {
     name: 'Another Splendid Board',
     owner: User.first
+  },
+  {
+    name: 'A third board, somehow',
+    owner: User.last
   }
 ]
 
