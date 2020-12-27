@@ -1,4 +1,8 @@
-<div class="flex flex-no-wrap overflow-x-auto">
+<div
+  class="flex flex-no-wrap overflow-x-auto"
+  data-controller="column-index--component"
+  data-column-index--component-url-value="<%= move_board_task_path(@board_id, ':id') %>"
+>
   <% @columns.each do |column| %>
     <%= component :column, column: column %>
   <% end %>

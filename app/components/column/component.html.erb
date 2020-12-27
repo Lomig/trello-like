@@ -6,7 +6,10 @@
   </div>
 
   <!-- Tasks -->
-  <div>
+  <div
+    data-column-index--component-target="column"
+    data-column-id="<%= @column.id %>"
+  >
     <% @column.tasks.each do |task| %>
       <%= component :task_card, task: task %>
     <% end %>
