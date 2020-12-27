@@ -1,0 +1,11 @@
+@layer components {
+  .column {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: max-content;
+  }
+
+  .column > div {
+    min-height: 0.5rem;
+  }
+}

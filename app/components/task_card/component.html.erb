@@ -1,0 +1,35 @@
+<div class="task-card mt-2 bg-white p-2 rounded border-b border-gray-400 cursor-pointer hover:bg-gray-200 text-sm">
+  <%#-- Name --#%>
+  <div>
+    <%= @task.name %>
+  </div>
+
+  <%#-- Icons --#%>
+  <div class="mt-2 ml-2 grid grid-cols-4 items-center">
+
+    <%#-- Subtasks --#%>
+    <%# TODO
+    <div class="col-start-1 text-xs text-gray-600 flex items-center">
+      <svg class="h-4 fill-current mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M11 4c-3.855 0-7 3.145-7 7v28c0 3.855 3.145 7 7 7h28c3.855 0 7-3.145 7-7V11c0-3.855-3.145-7-7-7zm0 2h28c2.773 0 5 2.227 5 5v28c0 2.773-2.227 5-5 5H11c-2.773 0-5-2.227-5-5V11c0-2.773 2.227-5 5-5zm25.234 9.832l-13.32 15.723-8.133-7.586-1.363 1.465 9.664 9.015 14.684-17.324z"/></svg>
+      3/5
+    </div>
+    %>
+
+    <%#-- Notifications --#%>
+    <%# TODO
+    <div class="col-start-2 ml-2">
+      <div class="bg-red-500 rounded p-1 inline-flex text-white text-xs">
+        <svg class="h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c-.8 0-1.5.7-1.5 1.5v.688C7.344 4.87 5 7.62 5 11v4.5l-2 2.313V19h18v-1.188L19 15.5V11c0-3.379-2.344-6.129-5.5-6.813V3.5c0-.8-.7-1.5-1.5-1.5zm-2 18c0 1.102.898 2 2 2 1.102 0 2-.898 2-2z"/></svg>
+        2
+      </div>
+    </div>
+    %>
+
+    <%#-- Assignees --#%>
+    <%# TODO
+    <div class="col-start-3 col-span-2 justify-self-end">
+      <img src="https://i.imgur.com/OZaT7jl.png" class="rounded-full" />
+    </div>
+    %>
+  </div>
+</div>
