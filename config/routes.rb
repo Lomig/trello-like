@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :boards, only: %w[index show] do
-    resources :tasks, only: [] do
-      member { patch :move }
+    resources :tasks, only: ['create'] do
     end
+  end
+
+  resources :tasks, only: [] do
+    member { patch :move }
   end
 end
