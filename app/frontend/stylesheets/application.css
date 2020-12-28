@@ -12,6 +12,6 @@
   }
 
   h1 {
-    @apply font-bold text-6xl text-center mb-16;
+    @apply font-bold text-4xl text-center mb-16;
   }
 }

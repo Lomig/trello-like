@@ -24,8 +24,9 @@ class Column < ApplicationRecord
   has_many :tasks, -> { order(:position) }, dependent: :restrict_with_error, inverse_of: :column
 
   def fix_position
-    numbered_tasks = tasks.select('id, position, ROW_NUMBER() OVER(ORDER BY position) AS new_position')
-                          .to_sql
+    numbered_tasks = Task.where(column: self)
+                         .select('id, position, ROW_NUMBER() OVER(ORDER BY position) AS new_position')
+                         .to_sql
 
     query = <<~SQL
       UPDATE tasks AS before

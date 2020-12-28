@@ -15,6 +15,8 @@
     <% end %>
   </div>
 
-  <!-- Add a card -->
-  <%= link_to 'Add a card…', '#TODO', class: 'block py-2 text-sm text-grey-dark'  %>
+  <!-- Add a card -->    
+  <turbo-frame id="<%= dom_id(@column) %>">
+    <%= link_to 'Add a card…', new_column_task_path(@column), class: 'block py-2 text-sm text-grey-dark' %>
+  </turbo-frame>
 </div>

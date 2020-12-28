@@ -3,6 +3,7 @@
 class Notification::Component < ApplicationComponent
   def initialize(type:, data:)
     @data = hasherize(data)
+    puts "\n\n\n data: #{@data}"
 
     @icon_name = icon_name(type)
     @icon_color = icon_color(type)
@@ -15,7 +16,7 @@ class Notification::Component < ApplicationComponent
   def hasherize(data)
     return { title: data } unless data.is_a?(Hash)
 
-    data
+    data.symbolize_keys
   end
 
   def icon_name(type)

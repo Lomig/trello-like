@@ -25,6 +25,8 @@ class Task < ApplicationRecord
 
   has_rich_text :description
 
+  validates :name, :position, presence: true
+
   scope :with_column, ->(column) { where(column: column) }
 end
 

@@ -5,6 +5,14 @@ class TaskPolicy < ApplicationPolicy
     end
   end
 
+  def new?
+    user.boards.include?(record.board)
+  end
+
+  def create?
+    new?
+  end
+
   def move?
     true
   end

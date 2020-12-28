@@ -5,6 +5,7 @@ export default class extends Controller {
   static values  = { timeout: Number, actionUrl: String, actionMethod: String }
 
   connect() {
+    console.log(this.element)
     if (document.documentElement.hasAttribute('data-turbo-preview')) return;
 
     // Display with transition

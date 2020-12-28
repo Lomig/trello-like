@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :boards, only: %w[index show] do
-    resources :tasks, only: ['create'] do
-    end
+  resources :boards, only: %w[index show]
+
+  resources :columns, only: [] do
+    resources :tasks, only: %w[new create]
   end
 
   resources :tasks, only: [] do
