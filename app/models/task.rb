@@ -25,9 +25,26 @@ class Task < ApplicationRecord
 
   has_rich_text :description
 
+  after_create_commit :broadcast_task_creation_to_column
+  after_update_commit :broadcast_task_update_to_column
+  after_destroy_commit :broadcast_task_destroy_to_column
+
   validates :name, :position, presence: true
 
   scope :with_column, ->(column) { where(column: column) }
+
+  private
+
+  def broadcast_task_creation_to_column
+    dom_id = ApplicationController.helpers.dom_id(column)
+    broadcast_append_to dom_id, target: "#{model_name.plural}-#{dom_id}"
+  end
+
+  def broadcast_task_update_to_column
+  end
+
+  def broadcast_task_destroy_to_column
+  end
 end
 
 class << Task

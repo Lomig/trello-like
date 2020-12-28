@@ -12,7 +12,10 @@ class TasksController < ApplicationController
     authorize(@task)
 
     if @task.save!
-      redirect_to @task.board
+      respond_to do |format|
+        format.turbo_stream { redirect_to @task.board }
+        format.html { redirect_to @task.board }
+      end
     else
       error_string = @task.errors.messages.inject('') { |text, (key, value)| "#{text}\n#{key} #{value.join(', ')}" }
       flash[:error] = { title: 'Submission Error', body: error_string }

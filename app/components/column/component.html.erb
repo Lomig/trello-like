@@ -6,7 +6,9 @@
   </div>
 
   <!-- Tasks -->
+  <%= turbo_stream_from(dom_id(@column)) %>
   <div
+    id="tasks-<%= dom_id(@column) %>"
     data-column-index--component-target="column"
     data-column-id="<%= @column.id %>"
   >
