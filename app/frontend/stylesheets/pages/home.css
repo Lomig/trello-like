@@ -1,5 +1,6 @@
 @layer components {
   .home--backdrop {
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
     backdrop-filter: grayscale(65%) blur(3px);
   }
 
