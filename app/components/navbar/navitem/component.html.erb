@@ -1,0 +1,8 @@
+<% active = controller_name.include?(@url[1..-1]) ? " active" : "" %>
+
+<li class="navitem w-full pb-4 text-gray-300 hover:text-gray-50<%= active %>">
+  <%= link_to(@url, class: "nav-link flex items-center justify-center") do %>
+    <%= content %>
+    <span class="navbar--text ml-4 hidden truncate"><%= @name %></span>
+  <% end %>
+</li>

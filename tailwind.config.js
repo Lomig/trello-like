@@ -25,6 +25,14 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
+      primary: {
+        DEFAULT: '#A78BFA',
+        highlight: '#8B5CF6',
+      },
+      secondary: {
+        DEFAULT: '#7C3AED',
+        highlight: '#6D28D9',
+      },
     },
     spacing: {
       px: '1px',
@@ -162,6 +170,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        'Open Sans',
         'ui-sans-serif',
         'system-ui',
         '-apple-system',
@@ -476,6 +485,7 @@ module.exports = {
     },
     minWidth: {
       0: '0px',
+      8: '2rem',
       full: '100%',
       min: 'min-content',
       max: 'max-content',
@@ -788,7 +798,7 @@ module.exports = {
     gridTemplateColumns: ['responsive'],
     gridTemplateRows: ['responsive'],
     height: ['responsive'],
-    inset: ['responsive'],
+    inset: ['responsive', 'hover'],
     justifyContent: ['responsive'],
     justifyItems: ['responsive'],
     justifySelf: ['responsive'],
@@ -796,7 +806,7 @@ module.exports = {
     lineHeight: ['responsive'],
     listStylePosition: ['responsive'],
     listStyleType: ['responsive'],
-    margin: ['responsive'],
+    margin: ['responsive', 'hover'],
     maxHeight: ['responsive'],
     maxWidth: ['responsive'],
     minHeight: ['responsive'],
@@ -846,7 +856,7 @@ module.exports = {
     verticalAlign: ['responsive'],
     visibility: ['responsive'],
     whitespace: ['responsive'],
-    width: ['responsive'],
+    width: ['responsive', 'hover'],
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus'],
   },

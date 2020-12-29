@@ -1,3 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "Mes boards", boards_path %>
+<section class="grid h-screen w-full grid-cols-1 grid-rows-1">
+  <%= image_pack_tag 'pages/home/banner.jpg', class: 'col-start-1 row-start-1 h-full object-cover z-0'%>
+  <div class="home--backdrop col-start-1 row-start-1 h-full w-full z-10"></div>
+
+  <div class="col-start-1 row-start-1 ml-16  self-center pt-64 z-20">
+    <h1 class="home--title font-bold text-left text-7xl mb-4 text-white uppercase">Kanban</h1>
+    <p class="home--description text-white text-lg w-2/5 mb-4">
+      KANBAN is a simple tool to handle projects using Kanban style boards.
+    </p>
+    <p class="home--description text-white text-lg mb-4 w-2/5">
+      Kanban boards visually depict work at various stages of a process using cards to represent work items and columns to represent each stage of the process. Cards are moved from left to right to show progress and to help coordinate teams performing the work. A Kanban board may be divided into horizontal “swimlanes” representing different kinds of work or different teams performing the work. 
+    </p>
+    <%= component :button, text: 'Start here!', url: 'boards_path' %>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+@layer components {
+  .navbar:hover .navitem > a {
+    @apply justify-start ml-4;
+  }
+
+  .navitem {
+    filter: grayscale(100%) opacity(0.7);
+    transition: 600ms;
+  }
+
+  .navitem:hover,
+  .navitem.active {
+    filter: grayscale(0%) opacity(1);
+  }
+}

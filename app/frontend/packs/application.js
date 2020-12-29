@@ -15,6 +15,6 @@ require("@rails/actiontext")
 // Internal imports
 
 // External calls
-// document.addEventListener('turbo:load', () => {
-
-// });
+document.addEventListener('turbo:load', () => {
+console.log("load")
+});

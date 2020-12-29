@@ -1,0 +1,13 @@
+@layer components {
+  .home--backdrop {
+    backdrop-filter: grayscale(65%) blur(3px);
+  }
+
+  .home--title {
+    font-family: GuardianTitlepieceWeb-Regular-Latin;
+  }
+
+  .home--description {
+    font-family: 'Guardian-Text-Egyp-Web-Reg-Latin';
+  }
+}

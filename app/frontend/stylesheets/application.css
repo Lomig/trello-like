@@ -1,17 +1,48 @@
 /* Imports */
 @import "plugins/trix.css";
 
+@import "utilities/fonts.css";
+
+@import "pages/index.css";
+
 /* Global Settings */
 @layer base {
   body {
     @apply bg-blue-100;
 
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "header main"
+                         "header footer";
     height: 100vh;
   }
 
-  h1 {
+  header {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  body::-webkit-scrollbar {
+    @apply w-1;
+  }
+
+  body::-webkit-scrollbar-track {
+    @apply bg-gray-900;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    @apply bg-purple-600;
+  }
+
+  h2 {
     @apply font-bold text-4xl text-center mb-16;
   }
 }
