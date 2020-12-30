@@ -1,4 +1,4 @@
-<%= component :navbar do |navbar| %>
+<%= component :navbar, user: current_user do |navbar| %>
   <%= navbar.logo { %> Kanban <% } %>
 
   <%= navbar.item(name: "My Boards", url: boards_path ) do %>

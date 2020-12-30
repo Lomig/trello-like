@@ -1,9 +1,9 @@
 <% active = controller_name == "pages" && controller.action_name == "home" ? "active" : "" %>
 
-<nav class="navbar bg-gray-800 overflow-y-scroll h-full w-20 hover:w-64">
-  <ul class="flex flex-col items-center h-full">
+<nav class="navbar flex flex-col justify-between bg-gray-800 overflow-y-scroll h-full w-20 hover:w-64">
+  <ul class="flex flex-col items-center">
     <li class="navbar--logo hidden lg:block font-bold uppercase mb-4 text-center text-2xl text-gray-50 bg-gray-900 w-full">
-      <%= link_to root_path, class: 'navbar--link flex items-center justify-center h-20 text-gray-300 hover:text-gray-50 hover:bg-gray-900 ' + active do %>
+      <%= link_to root_path, class: 'navbar--link flex items-center justify-center h-20 text-gray-300 hover:text-gray-50' + active do %>
         <span class="navbar--text mx-4 hidden"><%= logo %></span>
         <svg
           aria-hidden="true"
@@ -34,7 +34,8 @@
     <% items.each do |item| %>
       <%= item %>
     <% end %>
-
-  <%= component :"navbar/connect" %>
   </ul>
+
+  <%= component :"navbar/user_menu", user: @user %>
+  <%= component :"navbar/connect",   user: @user %>
 </nav>

@@ -4,6 +4,8 @@
 #
 
 Rails.application.routes.draw do
+  get 'users/logout', to: 'users#logout', as: :user_logout
+
   devise_for :users
   root to: 'pages#home'
 
@@ -15,5 +17,9 @@ Rails.application.routes.draw do
 
   resources :tasks, only: [] do
     member { patch :move }
+  end
+
+  resource :dashboard, only: [] do
+    member { get :me }
   end
 end
